@@ -1,0 +1,74 @@
+{
+  "active": true,
+  "polls": [
+    {
+      "id": "favorite-color",
+      "title": "What's your favorite color?",
+      "question": "Which color do you like the most?",
+      "answers": [
+        {
+          "id": "red",
+          "text": "Red"
+        },
+        {
+          "id": "blue",
+          "text": "Blue"
+        },
+        {
+          "id": "green",
+          "text": "Green"
+        },
+        {
+          "id": "purple",
+          "text": "Purple"
+        }
+      ]
+    },
+    {
+      "id": "favorite-season",
+      "title": "What's your favorite season?",
+      "question": "Which season do you enjoy the most?",
+      "answers": [
+        {
+          "id": "spring",
+          "text": "Spring"
+        },
+        {
+          "id": "summer",
+          "text": "Summer"
+        },
+        {
+          "id": "autumn",
+          "text": "Autumn"
+        },
+        {
+          "id": "winter",
+          "text": "Winter"
+        }
+      ]
+    },
+    {
+      "id": "favorite-pet",
+      "title": "What's your favorite pet?",
+      "question": "Which pet would you prefer to have?",
+      "answers": [
+        {
+          "id": "dog",
+          "text": "Dog"
+        },
+        {
+          "id": "cat",
+          "text": "Cat"
+        },
+        {
+          "id": "bird",
+          "text": "Bird"
+        },
+        {
+          "id": "fish",
+          "text": "Fish"
+        }
+      ]
+    }
+  ]
+}

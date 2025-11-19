@@ -1,0 +1,16 @@
+# Prevent access to configuration file
+<Files "config.json">
+    Require all denied
+</Files>
+
+# Prevent access to data directory (additional protection)
+<DirectoryMatch "^.*/data">
+    Require all denied
+</DirectoryMatch>
+
+# Optional: Enable clean URLs (remove .php extension)
+# Uncomment if you want URLs like /poll/favorite-color instead of /poll.php?id=favorite-color
+# RewriteEngine On
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^([a-zA-Z0-9-]+)$ poll.php?id=$1 [L,QSA]

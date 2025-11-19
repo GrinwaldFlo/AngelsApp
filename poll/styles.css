@@ -1,0 +1,176 @@
+/* Custom styles for the polling application */
+
+:root {
+    --primary-color: #634a99;
+    --primary-hover: #523d80;
+    --primary-light: #8669b8;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Override Bootstrap primary color */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+}
+
+/* Poll cards on main page */
+.poll-card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.poll-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.poll-card .card-body {
+    padding: 1.5rem;
+}
+
+/* Question text */
+.question-text {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* Answer buttons */
+.btn-answer {
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    padding: 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-answer:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(99, 74, 153, 0.3);
+}
+
+.btn-answer:active {
+    transform: translateY(0);
+}
+
+/* Results display */
+.results {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-item {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #f8f9fa;
+}
+
+.result-item.user-choice {
+    background-color: #e8f4f8;
+    border: 2px solid var(--primary-light);
+}
+
+.progress {
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.5s ease;
+}
+
+/* Badges */
+.badge {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+}
+
+/* Back button */
+.btn-outline-secondary {
+    border-width: 2px;
+    font-weight: 500;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+/* Icons */
+.bi {
+    vertical-align: middle;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .question-text {
+        font-size: 1.5rem;
+    }
+
+    .btn-answer {
+        font-size: 1.1rem;
+        padding: 1.25rem;
+    }
+
+    .poll-card .card-body {
+        padding: 1rem;
+    }
+
+    .results {
+        padding: 1.5rem;
+    }
+}
+
+/* Animation for results updates */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.results.updating {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Alert styling */
+.alert {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading indicator (optional enhancement) */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
