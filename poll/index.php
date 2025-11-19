@@ -12,18 +12,18 @@ $userId = getUserId();
 $config = loadConfig();
 
 if (!$config || !isset($config['polls'])) {
-    die('Configuration error: Unable to load polls.');
+	die('Erreur de configuration : Impossible de charger les sondages.');
 }
 
 $polls = $config['polls'];
 $isActive = arePollsActive();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polls</title>
+    <title>Sondages</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -40,11 +40,11 @@ $isActive = arePollsActive();
             <div class="col-lg-8">
                 <div class="text-center mb-4">
                     <h1 class="display-4">
-                        <i class="bi bi-clipboard-check"></i> Polls
+                        <i class="bi bi-clipboard-check"></i> Sondages
                     </h1>
                     <?php if (!$isActive): ?>
                         <div class="alert alert-info mt-3" role="alert">
-                            <i class="bi bi-info-circle"></i> Polls are currently inactive. You can view results but cannot submit new votes.
+                            <i class="bi bi-info-circle"></i> Les sondages sont actuellement inactifs. Tu peux voir les résultats mais tu ne peux pas voter.
                         </div>
                     <?php endif; ?>
                 </div>
@@ -59,14 +59,14 @@ $isActive = arePollsActive();
                                             <i class="bi bi-question-circle"></i> <?php echo htmlspecialchars($poll['title']); ?>
                                         </h5>
                                         <?php
-                                        $userVote = getUserVote($poll['id'], $userId);
-                                        $totalVotes = getTotalVotes($poll['id']);
-                                        ?>
+										$userVote = getUserVote($poll['id'], $userId);
+										$totalVotes = getTotalVotes($poll['id']);
+										?>
                                         <small class="text-muted">
                                             <?php if ($userVote): ?>
-                                                <i class="bi bi-check-circle-fill text-success"></i> You voted
+                                                <i class="bi bi-check-circle-fill text-success"></i> Tu as voté
                                             <?php else: ?>
-                                                <i class="bi bi-circle"></i> Not voted yet
+                                                <i class="bi bi-circle"></i> Pas encore voté
                                             <?php endif; ?>
                                             <span class="ms-2">
                                                 <i class="bi bi-people-fill"></i> <?php echo $totalVotes; ?> vote<?php echo $totalVotes !== 1 ? 's' : ''; ?>

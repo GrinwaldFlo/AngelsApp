@@ -31,7 +31,7 @@ $isActive = arePollsActive();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $isActive) {
     if (isset($_POST['answer'])) {
         $answerId = $_POST['answer'];
-        
+
         // Validate answer exists
         $validAnswer = false;
         foreach ($poll['answers'] as $answer) {
@@ -40,16 +40,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $isActive) {
                 break;
             }
         }
-        
+
         if ($validAnswer) {
             saveVote($pollId, $userId, $answerId);
         }
-        
+
         // Redirect to same page to prevent form resubmission
         header('Location: poll.php?id=' . urlencode($pollId));
         exit;
     }
-    
+
     // Handle vote removal
     if (isset($_POST['remove_vote'])) {
         removeVote($pollId, $userId);
@@ -73,7 +73,7 @@ foreach ($poll['answers'] as $answer) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
